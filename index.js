@@ -38,7 +38,7 @@ async function sendEmail(email) {
 app.post('/', async (req, res) => {
   const { email } = req.body;
   await sendEmail(email);
-  res.send('Correo recibido');
+  res.status(200).json({status: "Correo enviado"});
 })
 
 app.get('/', function (req, res) {
